@@ -1,3 +1,4 @@
+// Task 5: Interfeyslər, Klasslar və createEmployee
 interface DirectorInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
@@ -45,7 +46,18 @@ function createEmployee(salary: number | string): Director | Teacher {
   return new Director();
 }
 
-// Test yoxlamaları:
-console.log(createEmployee(200));
-console.log(createEmployee(1000));
-console.log(createEmployee('$500'));
+// Task 6: Type Predicate (isDirector) və executeWork
+function isDirector(employee: Director | Teacher): employee is Director {
+  return employee instanceof Director;
+}
+
+function executeWork(employee: Director | Teacher): string {
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks();
+  }
+  return employee.workTeacherTasks();
+}
+
+// Testlər
+console.log(executeWork(createEmployee(200)));  // Getting to work
+console.log(executeWork(createEmployee(1000))); // Getting to director tasks
