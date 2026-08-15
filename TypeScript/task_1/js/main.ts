@@ -1,4 +1,4 @@
-// Task 1: Teacher interfeysi
+// Task 1: Teacher
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -8,12 +8,12 @@ interface Teacher {
   [propName: string]: any;
 }
 
-// Task 2: Directors interfeysi
+// Task 2: Directors
 interface Directors extends Teacher {
   numberOfReports: number;
 }
 
-// Task 3: Funksiya interfeysi və funksiya
+// Task 3: 
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
@@ -22,7 +22,7 @@ const printTeacher: printTeacherFunction = (firstName: string, lastName: string)
   return `${firstName.charAt(0)}. ${lastName}`;
 };
 
-// Task 4: StudentClass interfeysləri və klassı
+// Task 4: 
 interface StudentClassInterface {
   workOnHomework(): string;
   displayName(): string;
@@ -50,7 +50,7 @@ class StudentClass implements StudentClassInterface {
   }
 }
 
-// Testlər
+// Tests
 const teacher3: Teacher = {
   firstName: 'John',
   fullTimeEmployee: false,
