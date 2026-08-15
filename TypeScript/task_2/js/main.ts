@@ -1,4 +1,4 @@
-// Task 5: Interfeyslər, Klasslar və createEmployee
+// Task 5: 
 interface DirectorInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
@@ -46,7 +46,7 @@ function createEmployee(salary: number | string): Director | Teacher {
   return new Director();
 }
 
-// Task 6: Type Predicate (isDirector) və executeWork
+// Task 6: 
 function isDirector(employee: Director | Teacher): employee is Director {
   return employee instanceof Director;
 }
@@ -58,7 +58,7 @@ function executeWork(employee: Director | Teacher): string {
   return employee.workTeacherTasks();
 }
 
-// Task 7: String Literal Type (Subjects) və teachClass
+// Task 7:
 type Subjects = 'Math' | 'History';
 
 function teachClass(todayClass: Subjects): string {
@@ -68,8 +68,8 @@ function teachClass(todayClass: Subjects): string {
   return 'Teaching History';
 }
 
-// Testlər
-console.log(executeWork(createEmployee(200)));  // Getting to work
-console.log(executeWork(createEmployee(1000))); // Getting to director tasks
-console.log(teachClass('Math'));                // Teaching Math
-console.log(teachClass('History'));             // Teaching History
+// Tests
+console.log(executeWork(createEmployee(200))); 
+console.log(executeWork(createEmployee(1000))); 
+console.log(teachClass('Math'));                
+console.log(teachClass('History'));             
